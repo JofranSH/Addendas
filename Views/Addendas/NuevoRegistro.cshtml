@@ -1,0 +1,50 @@
+﻿@model WebApplication1.Models.ViewModels.Addendas.AgregarRegistro
+@{
+    ViewBag.Title = "Nuevo Registro";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("NuevoRegistro", "Addendas", FormMethod.Post))
+{
+    <div class="row">
+        <div class="cold-md-12">
+            <div>
+                @Html.LabelFor(d => d.IdAddenda)
+                @Html.TextBoxFor(d => d.IdAddenda, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.IdAddenda, null, new { @class = "red" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.NombreAddenda)
+                @Html.TextBoxFor(d => d.NombreAddenda, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.NombreAddenda, null, new { @class = "red" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.XML)
+                @Html.TextBoxFor(d => d.XML, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.XML, null, new { @class = "red" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.FechaModificacion)
+                @Html.TextBoxFor(d => d.FechaModificacion, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.FechaModificacion, null, new { @class = "red" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.Usuario)
+                @Html.TextBoxFor(d => d.Usuario, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Usuario, null, new { @class = "red" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.Estado)
+                @Html.TextBoxFor(d => d.Estado, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Estado, null, new { @class = "red" })
+            </div>
+
+
+            <div style="text-align:right;">
+                <input Value="Guardar" class="btn btn-primary" type="submit" />
+            </div>
+        </div>
+    </div>
+}
+
